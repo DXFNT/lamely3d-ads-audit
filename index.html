@@ -624,6 +624,7 @@
       font-family: var(--font-secondary);
       border-bottom: 1px solid var(--dex-border);
       background: var(--dex-white);
+      font-variant-numeric: tabular-nums;
     }
     .audit-table tr:last-child td { border-bottom: none; }
     .audit-table tr:hover td { background: var(--dex-light-bg); }
@@ -1181,6 +1182,7 @@
       border-bottom: 1px solid var(--dex-border);
       background: var(--dex-white);
       text-align: center;
+      font-variant-numeric: tabular-nums;
     }
     .market-table td:first-child { text-align: left; font-weight: 600; color: var(--dex-navy); }
     .market-table tr:last-child td { border-bottom: none; }
@@ -1281,11 +1283,76 @@
       .priority-row .p-impact, .priority-row .p-effort { display: none; }
       .market-table { font-size: 12px; }
       .market-table th, .market-table td { padding: 10px 8px; }
+      .exec-summary { padding: 20px 24px; margin-top: -20px; }
+      .bar-label { width: 100px; font-size: 11px; }
+      .bar-value { width: 80px; font-size: 11px; }
+      .ad-showcase { grid-template-columns: 1fr; }
     }
+
+    /* --- EXECUTIVE SUMMARY --- */
+    .exec-summary {
+      background: var(--dex-white);
+      border-radius: 16px;
+      padding: 32px 40px;
+      margin-top: -32px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      border-left: 4px solid var(--dex-blue);
+      border: 1px solid var(--dex-border);
+      border-left: 4px solid var(--dex-blue);
+    }
+    .exec-summary h2 { font-size: 18px; color: var(--dex-blue); margin-bottom: 16px; font-family: var(--font-secondary); font-weight: 700; }
+    .exec-finding { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 14px; font-family: var(--font-secondary); color: var(--dex-text); }
+    .exec-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+    .exec-icon.danger { background: #fce8e6; color: #c5221f; }
+    .exec-icon.warning { background: #fff3cd; color: #856404; }
+    .exec-icon.info { background: var(--dex-blue-10); color: var(--dex-blue); }
+
+    /* --- HORIZONTAL BAR CHARTS --- */
+    .bar-chart { margin: 24px 0; }
+    .bar-row { display: flex; align-items: center; margin-bottom: 10px; gap: 12px; }
+    .bar-label { width: 140px; font-size: 13px; font-weight: 600; font-family: var(--font-secondary); flex-shrink: 0; color: var(--dex-navy); }
+    .bar-track { flex: 1; height: 28px; background: var(--dex-light-bg); border-radius: 6px; overflow: hidden; position: relative; }
+    .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 12px; font-size: 12px; font-weight: 700; color: white; font-family: var(--font-secondary); }
+    .bar-value { width: 100px; text-align: right; font-size: 13px; font-weight: 600; font-family: var(--font-secondary); flex-shrink: 0; color: var(--dex-navy); font-variant-numeric: tabular-nums; }
+
+    /* --- COLOR-CODED HIGHLIGHT BOXES --- */
+    .highlight-positive { background: #ecfdf5; border-left: 3px solid var(--dex-teal); border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: #065f46; font-family: var(--font-secondary); }
+    .highlight-warning { background: #fffbeb; border-left: 3px solid var(--dex-orange); border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: #92400e; font-family: var(--font-secondary); }
+    .highlight-negative { background: #fef2f2; border-left: 3px solid #ef4444; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: #991b1b; font-family: var(--font-secondary); }
+    .highlight-neutral { background: var(--dex-blue-light); border-left: 3px solid var(--dex-blue); border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: var(--dex-navy); font-family: var(--font-secondary); }
+
+    /* --- AD CREATIVE SHOWCASE --- */
+    .ad-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .ad-showcase-card { border: 1px solid var(--dex-border); border-radius: var(--radius-md); overflow: hidden; background: var(--dex-white); box-shadow: var(--shadow); }
+    .ad-showcase-card .asc-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--dex-border); }
+    .ad-showcase-card .asc-header .brand-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .ad-showcase-card .asc-header .brand-dot.active { background: var(--dex-teal); }
+    .ad-showcase-card .asc-header .brand-dot.inactive { background: var(--dex-muted); }
+    .ad-showcase-card .asc-header .brand-dot.issue { background: var(--dex-orange); }
+    .ad-showcase-card .asc-header strong { font-size: 14px; font-family: var(--font-secondary); color: var(--dex-navy); }
+    .ad-showcase-card .asc-body { padding: 16px; }
+    .ad-showcase-card .asc-body .asc-date { font-size: 11px; font-family: var(--font-secondary); color: var(--dex-muted); margin-bottom: 8px; }
+    .ad-showcase-card .asc-body .asc-copy { background: var(--dex-light-bg); border-radius: 6px; padding: 12px; font-size: 13px; font-family: var(--font-secondary); color: var(--dex-text); line-height: 1.6; margin-bottom: 8px; }
+    .ad-showcase-card .asc-body .asc-type { font-size: 11px; font-family: var(--font-secondary); color: var(--dex-muted); }
 
     @keyframes pulse {
       0%, 100% { r: 6; opacity: 1; }
       50% { r: 10; opacity: 0.6; }
+    }
+
+    /* --- PRINT STYLES --- */
+    @media print {
+      body { background: white; }
+      .nav { position: static; }
+      .urgency { display: none; }
+      section { page-break-inside: avoid; }
+      .locked-section { display: none; }
+      .pricing-section { display: none; }
+      .cta-box { display: none; }
+      .hamburger { display: none; }
     }
   </style>
 </head>
@@ -1293,7 +1360,7 @@
 
 <!-- URGENCY -->
 <div class="urgency">
-  Nemecký trh 150K+ vyhľadávaní mesačne — Každý deň bez viditeľnosti = objednávky pre konkurenciu
+  3 trhy, 190K+ vyhľadávaní mesačne, produkt na webe — Identifikovali sme quick wins na SK a CZ aj bez zmeny produktu
 </div>
 
 <!-- NAV -->
@@ -1348,31 +1415,57 @@
   </div>
 </header>
 
+<!-- EXECUTIVE SUMMARY — Quick Wins -->
+<div class="container" style="position: relative; z-index: 2;">
+  <div class="exec-summary">
+    <h2>Kde vidíme najrýchlejšie príležitosti</h2>
+    <div class="exec-finding">
+      <div class="exec-icon danger">1</div>
+      <div><strong>Produkt máte, dopyt existuje, kampaň chýba:</strong> Na SK hľadá „akustické panely" 2 000 ľudí mesačne a „lamely na stenu" 4 700 ľudí — ale lamely3d.sk sa na „akustické panely" nezobrazuje vôbec (ani organic, ani paid, ani shopping). Pritom produkt na webe máte.</div>
+    </div>
+    <div class="exec-finding">
+      <div class="exec-icon danger">2</div>
+      <div><strong>CZ trh — 14K+ vyhľadávaní, 0 pokrytie:</strong> „Akustické panely" v CZ hľadá 8 700 ľudí mesačne. Lamely3D tam nemá ani organic pozíciu, ani platenú kampaň. Pritom web lamely3d.sk je v slovenčine, ktorú Česi čítajú. Quick win: spustiť PPC na CZ.</div>
+    </div>
+    <div class="exec-finding">
+      <div class="exec-icon warning">3</div>
+      <div><strong>Keyword mismatch = stratený traffic:</strong> Váš web hovorí o „lamely" a „3D panely", ale zákazníci hľadajú „akustické panely" (122K/mes DE, 8.7K CZ, 2K SK). Repositioning na „akustické" by otvoril 10× väčší trh bez zmeny produktu.</div>
+    </div>
+    <div class="exec-finding">
+      <div class="exec-icon info">4</div>
+      <div><strong>DE trh je obrovská príležitosť, ale vyžaduje investíciu:</strong> 150K+ vyhľadávaní mesačne, produkty na webe máte — ale DR 0 a 0 organic pozícií znamená, že Google vám zatiaľ nedôveruje. Toto nie je quick win, ale strednodobá stratégia s najväčším potenciálom.</div>
+    </div>
+  </div>
+</div>
+
 <!-- HIGHLIGHT FINDING -->
 <div class="container" id="highlight" style="position: relative; z-index: 10;">
   <div class="highlight-box">
-    <h2>Nemecký trh je 50x väčší — a vy tam nemáte ani jednu aktívnu reklamu</h2>
-    <p class="highlight-sub">Lamely3D.de má 1 100 historických Meta reklám, ale dnes 0 aktívnych. V Google sa na kľúčové slová nezobrazujete. Konkurenti typu Liderwood.de dominujú.</p>
+    <h2>Produkt × Dopyt × Bez kampane = Okamžitá príležitosť</h2>
+    <p class="highlight-sub">Identifikovali sme 3 trhy kde existuje vysoký search dopyt pre vaše produkty, ale nemáte aktívne pokrytie — ani organic, ani paid. Toto sú quick wins.</p>
     <div class="highlight-grid">
       <div class="highlight-card">
+        <div class="h-num">4 700</div>
+        <div class="h-label">"lamely na stenu" SK /mes<br>Máte produkt, chýba Shopping</div>
+      </div>
+      <div class="highlight-card">
+        <div class="h-num">8 700</div>
+        <div class="h-label">"akustické panely" CZ /mes<br>Máte produkt, 0 pokrytie</div>
+      </div>
+      <div class="highlight-card">
         <div class="h-num">122K</div>
-        <div class="h-label">"akustikpaneele" DE /mes<br>Lamely3D: neviditeľné</div>
+        <div class="h-label">"akustikpaneele" DE /mes<br>Máte web, 0 organic</div>
       </div>
       <div class="highlight-card">
-        <div class="h-num orange">0</div>
-        <div class="h-label">Aktívnych Meta reklám DE<br>z 1 100 historických</div>
-      </div>
-      <div class="highlight-card">
-        <div class="h-num" style="color: var(--dex-red);">32</div>
-        <div class="h-label">PageSpeed skóre SK (mobil)<br>LCP 10.7s = 4x nad limitom</div>
-      </div>
-      <div class="highlight-card">
-        <div class="h-num orange">0</div>
-        <div class="h-label">Heureka recenzií<br>Trustpilot DE: tiež 0</div>
+        <div class="h-num">2 000</div>
+        <div class="h-label">"akustické panely" SK /mes<br>Máte produkt, chýba kampaň</div>
       </div>
     </div>
     <div class="highlight-detail">
-      <strong>Kto zbiera vašich zákazníkov?</strong> Na "akustikpaneele" v DE dominujú Momento Akustik, OBI, WoodUpp, HORNBACH a Silent Wood. Na "holzpaneele wand" platí v Google Ads Liderwood.de. Na SK na "akustické panely" sú viditeľní Alza, Temu, potichu.sk a Hornbach — Lamely3D sa nezobrazuje ani v organic, ani v platenom vyhľadávaní.
+      <strong>Kde presne je prienik produkt × dopyt × bez kampane:</strong><br>
+      <strong style="color: var(--dex-teal);">SK Quick Win:</strong> Na "lamely na stenu" (4 700/mes) ste v Paid #1, ale chýbate v Shopping a na "akustické panely" (2 000/mes) chýbate úplne. Pritom je to rovnaký produkt — len iný search term.<br>
+      <strong style="color: var(--dex-teal);">CZ Quick Win:</strong> "Akustické panely" (8 700/mes) + "lamely na zeď" (1 700/mes) — 0 pokrytie, ale web funguje aj pre CZ zákazníkov. Stačí spustiť kampane.<br>
+      <strong style="color: var(--dex-orange);">DE Potenciál:</strong> Obrovský trh (150K+/mes), ale vyžaduje investíciu do SEO a brand authority (DR 0 → min DR 15+). Na SK a CZ vidíme okamžité výsledky.
     </div>
   </div>
 </div>
@@ -1597,11 +1690,8 @@
       </tbody>
     </table>
 
-    <div style="margin-top: 24px; padding: 20px; background: var(--dex-white); border-radius: var(--radius-md); border-left: 4px solid var(--dex-orange); box-shadow: var(--shadow);">
-      <p style="font-size: 14px; font-family: var(--font-secondary); color: var(--dex-navy); font-weight: 600; margin-bottom: 8px;">Celkový potenciál vs. realita</p>
-      <p style="font-size: 13px; font-family: var(--font-secondary); color: var(--dex-muted); line-height: 1.7;">
-        Naprieč 4 trhmi existuje <strong style="color: var(--dex-navy);">190 000+ mesačných vyhľadávaní</strong> relevantných pre vaše produkty. Lamely3D aktuálne zachytáva iba <strong style="color: var(--dex-orange);">~87 návštev</strong> (45 organic + 42 paid). To znamená, že pokrývate menej ako <strong style="color: var(--dex-orange);">0,05 %</strong> celkového dopytu. Nemecký trh sám tvorí 80 % tohto objemu a je úplne nepokrytý organicky.
-      </p>
+    <div class="highlight-warning" style="margin-top: 24px;">
+      <strong>Celkový potenciál vs. realita:</strong> Naprieč 4 trhmi existuje <strong>190 000+ mesačných vyhľadávaní</strong> relevantných pre vaše produkty. Lamely3D aktuálne zachytáva iba <strong>~87 návštev</strong> (45 organic + 42 paid). To znamená, že pokrývate menej ako <strong>0,05 %</strong> celkového dopytu. Nemecký trh sám tvorí 80 % tohto objemu a je úplne nepokrytý organicky.
     </div>
   </div>
 </section>
@@ -1612,8 +1702,8 @@
     <h2>Meta Ads — Facebook & Instagram</h2>
     <p class="section-sub">Kontrola aktívnych reklám cez Meta Ad Library pre Lamely3D</p>
 
-    <div class="disclaimer">
-      Skontrolovali sme Meta Ad Library pre "lamely3d" na SK (~340 výsledkov) a DE (~1 100 výsledkov). Inzerenti: Lamele3d.sk, Lamely3D.com, Lamely3D.de. Historicky intenzívna aktivita — aktuálne takmer zastavená.
+    <div class="highlight-neutral">
+      <strong>Metodológia:</strong> Skontrolovali sme Meta Ad Library pre "lamely3d" na SK (~340 výsledkov) a DE (~1 100 výsledkov). Inzerenti: Lamele3d.sk, Lamely3D.com, Lamely3D.de. Historicky intenzívna aktivita — aktuálne takmer zastavená.
     </div>
 
     <div class="finding">
@@ -1670,6 +1760,43 @@
         <div class="p-text">Vyčistiť SK jazyk z DE reklám — lokalizácia účtov</div>
         <div class="p-impact med">Stredný</div>
         <div class="p-effort">Nízka</div>
+      </div>
+    </div>
+
+    <div class="cat-header" style="margin-top: 36px;">Ukážky reklám z Ad Library</div>
+    <div class="ad-showcase">
+      <div class="ad-showcase-card">
+        <div class="asc-header">
+          <div class="brand-dot active"></div>
+          <strong>Lamely3D — aktívna SK reklama</strong>
+        </div>
+        <div class="asc-body">
+          <div class="asc-date">Od 25. marca 2026 · FB + IG + Messenger + Threads</div>
+          <div class="asc-copy">"Prírodný dizajn" — image ad, single static visual. Jediná aktuálne aktívna reklama z celého SK účtu (~340 historických).</div>
+          <div class="asc-type">Formát: Image ad · Inzerent: Lamele3d.sk</div>
+        </div>
+      </div>
+      <div class="ad-showcase-card">
+        <div class="asc-header">
+          <div class="brand-dot inactive"></div>
+          <strong>Lamely3D.de — posledná DE reklama</strong>
+        </div>
+        <div class="asc-body">
+          <div class="asc-date">Neaktívna · dec 2024 – feb 2025 · Spend €300–399</div>
+          <div class="asc-copy">Posledná DE kampaň bežala ~2 mesiace s ~30K impressions a potom bola zastavená. Žiadna aktívna DE reklama od februára 2025.</div>
+          <div class="asc-type">~30K impressions · €300–399 spend · Zastavená</div>
+        </div>
+      </div>
+      <div class="ad-showcase-card" style="grid-column: 1 / -1;">
+        <div class="asc-header">
+          <div class="brand-dot issue"></div>
+          <strong>Lokalizačný problém</strong>
+        </div>
+        <div class="asc-body">
+          <div class="asc-date">Viacero DE kampaní · Inzerent: Pivaren Marina / Lamely3D.com</div>
+          <div class="asc-copy">SK jazyk v DE kampani — nemecký zákazník vidí slovenský text. Quality score klesá, CPC rastie, relevancia je nulová. Reklamy cielené na Nemecko mali slovenský copy.</div>
+          <div class="asc-type">Problém: SK jazyk na DE trhu · Dopad: Nízky Quality Score, vysoké CPC</div>
+        </div>
       </div>
     </div>
 
@@ -1847,11 +1974,9 @@
       </tbody>
     </table>
 
-    <div style="margin-top: 24px; padding: 20px; background: var(--dex-navy); border-radius: var(--radius-md); color: var(--dex-white);">
-      <p style="font-size: 14px; font-family: var(--font-secondary); font-weight: 600; margin-bottom: 8px; color: var(--dex-orange);">Kritický problém: Reklamy na webe bez organickej autority</p>
-      <p style="font-size: 13px; font-family: var(--font-secondary); color: rgba(255,255,255,0.7); line-height: 1.7;">
-        Lamely3d.de má Domain Rating 0, 0 backlinkov a 0 organických kľúčových slov. Google Ads bežia na doméne, ktorej Google nepriraďuje žiadnu autoritu. Toto má priamy dopad na Quality Score vašich reklám, čo zvyšuje CPC a znižuje pozície. Efekt je ako keby ste platili za reklamu na billboard, ktorý nemá adresu.
-      </p>
+    <div class="highlight-negative" style="margin-top: 24px;">
+      <strong>Kritický problém: Reklamy na webe bez organickej autority</strong><br>
+      Lamely3d.de má Domain Rating 0, 0 backlinkov a 0 organických kľúčových slov. Google Ads bežia na doméne, ktorej Google nepriraďuje žiadnu autoritu. Toto má priamy dopad na Quality Score vašich reklám, čo zvyšuje CPC a znižuje pozície. Efekt je ako keby ste platili za reklamu na billboard, ktorý nemá adresu.
     </div>
 
     <div class="finding" style="margin-top: 24px;">
@@ -1884,9 +2009,8 @@
     <h2>Gap analýza — produkty vs. viditeľnosť</h2>
     <p class="section-sub">Porovnanie produktového portfólia s pokrytím vo vyhľadávaní naprieč trhmi</p>
 
-    <div style="background: var(--dex-blue-10); border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 24px; border-left: 3px solid var(--dex-blue);">
-      <p style="font-size: 13px; color: var(--dex-navy); font-family: var(--font-secondary);"><strong>Metodológia a obmedzenia:</strong></p>
-      <p style="font-size: 12px; color: var(--dex-muted); font-family: var(--font-secondary); line-height: 1.7;">Analýza porovnáva vyhľadávacie dopytové kategórie s aktuálnymi pozíciami Lamely3D v Ahrefs. "Chýba" = nie ste v top 100 pre danú kategóriu. Objemy sú mesačné priemery pre daný trh.</p>
+    <div class="highlight-neutral">
+      <strong>Metodológia a obmedzenia:</strong> Analýza porovnáva vyhľadávacie dopytové kategórie s aktuálnymi pozíciami Lamely3D v Ahrefs. "Chýba" = nie ste v top 100 pre danú kategóriu. Objemy sú mesačné priemery pre daný trh.
     </div>
 
     <div class="cat-header">SK trh</div>
@@ -2507,6 +2631,55 @@
       </tbody>
     </table>
 
+    <div class="cat-header" style="margin-top: 36px;">Organic Traffic — vizuálne porovnanie SK</div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Merkury Market</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 100%; background: var(--dex-navy);"></div>
+        </div>
+        <div class="bar-value">357 248</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Hornbach</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 73%; background: var(--dex-blue);"></div>
+        </div>
+        <div class="bar-value">260 234</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Tatranský Profil</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 3.4%; background: var(--dex-teal);"></div>
+        </div>
+        <div class="bar-value">12 218</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Skráslimdom</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 1%; background: var(--dex-orange);"></div>
+        </div>
+        <div class="bar-value">3 626</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Lamelio</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 0.1%; background: var(--dex-muted);"></div>
+        </div>
+        <div class="bar-value">361</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label" style="color: var(--dex-orange); font-weight: 700;">Lamely3D</div>
+        <div class="bar-track">
+          <div style="height: 100%; width: 2%; border-radius: 6px; border: 2px dashed var(--dex-orange); box-sizing: border-box;"></div>
+        </div>
+        <div class="bar-value" style="color: var(--dex-orange); font-weight: 700;">45</div>
+      </div>
+    </div>
+    <div class="highlight-negative" style="margin-top: 8px;">
+      <strong>Lamely3D má 7 940x menej organic traffic ako Merkury Market</strong> a 80x menej ako priamy konkurent Tatranský Profil. Aj Lamelio.sk s 361 návštevami má 8x väčší organic traffic.
+    </div>
+
     <div class="cat-header" style="margin-top: 36px;">DE trh — kľúčoví hráči</div>
     <div style="padding: 20px; background: var(--dex-white); border-radius: var(--radius-md); box-shadow: var(--shadow); border: 1px solid var(--dex-border);">
       <p style="font-size: 14px; font-family: var(--font-secondary); color: var(--dex-navy); font-weight: 600; margin-bottom: 12px;">Nemecký trh — kto sa zobrazuje na kľúčové slová (reálny SERP):</p>
@@ -2516,9 +2689,9 @@
         <li style="font-size: 13px; font-family: var(--font-secondary); color: var(--dex-muted); margin-bottom: 6px;"><strong style="color: var(--dex-navy);">OBI.de, HORNBACH.de, Leiste24.de</strong> — DIY marketplace s vlastnou ponukou panelov</li>
         <li style="font-size: 13px; font-family: var(--font-secondary); color: var(--dex-muted); margin-bottom: 6px;"><strong style="color: var(--dex-navy);">Floor24, Buero-Direkt24, planetmoebel</strong> — organic výsledky na "holzpaneele wand"</li>
       </ul>
-      <p style="font-size: 13px; font-family: var(--font-secondary); color: var(--dex-navy); margin-top: 12px; padding: 12px; background: var(--dex-blue-10); border-radius: var(--radius-sm);">
+      <div class="highlight-positive" style="margin-top: 12px;">
         <strong>Vaša výhoda:</strong> "Handgefertigt in der EU" vs. čínska masová výroba. Premium segment, kde zákazník platí za kvalitu, nie najnižšiu cenu. Tento positioning na Amazone chýba.
-      </p>
+      </div>
     </div>
 
     <div class="cta-box">
