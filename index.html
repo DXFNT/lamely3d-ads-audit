@@ -1613,11 +1613,35 @@
     <p class="section-sub">Kontrola aktívnych reklám cez Meta Ad Library pre Lamely3D</p>
 
     <div class="disclaimer">
-      Kontrola prebieha — dáta z Meta Ad Library budú doplnené. Aktuálne sa preveruje prítomnosť aktívnych kampaní a ich štruktúra pre SK, CZ, DE a AT trhy.
+      Skontrolovali sme Meta Ad Library pre "lamely3d" na SK (~340 výsledkov) a DE (~1 100 výsledkov). Inzerenti: Lamele3d.sk, Lamely3D.com, Lamely3D.de. Historicky intenzívna aktivita — aktuálne takmer zastavená.
+    </div>
+
+    <div class="finding">
+      <div class="bar high"></div>
+      <div class="content">
+        <h4>DE Meta reklamy úplne vypnuté <span class="badge badge-critical">Kritické</span></h4>
+        <p>Z ~1 100 historických DE reklám je <strong>0 aktívnych</strong>. Lamely3D investoval EUR 200–400 na kampaň s 15K–35K impressions — a potom kampane zastavil. Bez Meta remarketingu a prospectingu na DE trhu nie sú nové objednávky prekvapením.</p>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="bar high"></div>
+      <div class="content">
+        <h4>SK len 1 aktívna reklama z 340 <span class="badge badge-warning">Dôležité</span></h4>
+        <p>Na SK beží jediná image reklama od 25. marca 2026 (Lamele3d.sk). Copy: prírodný dizajn, ekológia. Chýba A/B testovanie, carousel formáty, DPA. Pre eshop s konfigurátorom je 1 statická reklama nedostatočná.</p>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="bar med"></div>
+      <div class="content">
+        <h4>Problém s lokalizáciou DE reklám <span class="badge badge-warning">Na overenie</span></h4>
+        <p>V nemeckých kampaniach sa objavujú reklamy so slovenským jazykom (inzerent "Pivaren Marina"). Nesprávne zacielenie alebo zdieľaný účet — SK copy na DE publikum poškodzuje dôveryhodnosť.</p>
+      </div>
     </div>
 
     <div class="priority-summary">
-      <h3>Prioritné oblasti pre Meta Ads</h3>
+      <h3>Prioritizácia Meta Ads</h3>
       <div class="priority-legend">
         <div class="leg-item"><div class="leg-dot p1"></div> Kritická</div>
         <div class="leg-item"><div class="leg-dot p2"></div> Vysoká</div>
@@ -1625,26 +1649,32 @@
       </div>
       <div class="priority-row">
         <div class="p-dot p1"></div>
-        <div class="p-text">CZ trh: 0 Meta reklám pre 14K+ mesačných vyhľadávaní</div>
+        <div class="p-text">Reaktivovať DE kampane s native German copy a retargetingom</div>
+        <div class="p-impact">Vysoký</div>
+        <div class="p-effort">Stredná</div>
+      </div>
+      <div class="priority-row">
+        <div class="p-dot p1"></div>
+        <div class="p-text">Spustiť CZ Meta kampane (0 pokrytie na trhu s 14K+ vyhľadávaniami)</div>
         <div class="p-impact">Vysoký</div>
         <div class="p-effort">Nízka</div>
       </div>
       <div class="priority-row">
-        <div class="p-dot p1"></div>
-        <div class="p-text">DE/AT trh: Retargeting na návštevníkov lamely3d.de</div>
-        <div class="p-impact">Vysoký</div>
+        <div class="p-dot p2"></div>
+        <div class="p-text">Before/after carousel, konfigurátor video, UGC testimonials</div>
+        <div class="p-impact med">Stredný</div>
         <div class="p-effort">Stredná</div>
       </div>
       <div class="priority-row">
         <div class="p-dot p2"></div>
-        <div class="p-text">Vizuálny content — before/after, konfigurátor, montáž</div>
+        <div class="p-text">Vyčistiť SK jazyk z DE reklám — lokalizácia účtov</div>
         <div class="p-impact med">Stredný</div>
-        <div class="p-effort">Stredná</div>
+        <div class="p-effort">Nízka</div>
       </div>
     </div>
 
     <div class="cta-box">
-      <a href="#pricing">Chcem kompletný audit Meta reklám →</a>
+      <a href="https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SK&q=lamely3d&search_type=keyword_unordered&media_type=all" target="_blank">Pozrieť v Meta Ad Library →</a>
     </div>
   </div>
 </section>
@@ -2314,44 +2344,92 @@
 <!-- ======= PAGESPEED ======= -->
 <section id="pagespeed">
   <div class="container">
-    <h2>PageSpeed — lamely3d.sk</h2>
-    <p class="section-sub">Meranie PageSpeed Insights prebieha — aktuálne placeholder hodnoty budú nahradené skutočnými dátami.</p>
+    <h2>PageSpeed — Porovnanie oboch domén</h2>
+    <p class="section-sub">Lighthouse mobile test — lamely3d.sk vs lamely3d.de</p>
 
+    <h3 style="font-family: var(--font-secondary); font-size: 15px; color: var(--dex-navy); margin-bottom: 16px;">lamely3d.sk (mobile)</h3>
     <div class="ps-grid">
-      <div class="ps-card ok">
-        <div class="ps-value">—</div>
+      <div class="ps-card bad">
+        <div class="ps-value">32</div>
         <div class="ps-label">Performance</div>
         <div class="ps-target">Cieľ: 90+</div>
       </div>
-      <div class="ps-card ok">
-        <div class="ps-value">—</div>
-        <div class="ps-label">Accessibility</div>
-        <div class="ps-target">Cieľ: 90+</div>
-      </div>
-      <div class="ps-card ok">
-        <div class="ps-value">—</div>
-        <div class="ps-label">Best Practices</div>
-        <div class="ps-target">Cieľ: 90+</div>
-      </div>
-      <div class="ps-card ok">
-        <div class="ps-value">—</div>
-        <div class="ps-label">SEO</div>
-        <div class="ps-target">Cieľ: 90+</div>
-      </div>
-      <div class="ps-card ok">
-        <div class="ps-value">—</div>
+      <div class="ps-card bad">
+        <div class="ps-value">10.7 s</div>
         <div class="ps-label">LCP</div>
-        <div class="ps-target">Cieľ: &lt;2.5s</div>
+        <div class="ps-target">Cieľ: &lt;2.5 s</div>
+      </div>
+      <div class="ps-card bad">
+        <div class="ps-value">1 790 ms</div>
+        <div class="ps-label">TBT</div>
+        <div class="ps-target">Cieľ: &lt;200 ms</div>
       </div>
       <div class="ps-card ok">
-        <div class="ps-value">—</div>
+        <div class="ps-value">1.8 s</div>
+        <div class="ps-label">FCP</div>
+        <div class="ps-target">Cieľ: &lt;1.8 s</div>
+      </div>
+      <div class="ps-card ok">
+        <div class="ps-value">2.9 s</div>
+        <div class="ps-label">Speed Index</div>
+        <div class="ps-target">Cieľ: &lt;3.4 s</div>
+      </div>
+      <div class="ps-card good">
+        <div class="ps-value">0.014</div>
         <div class="ps-label">CLS</div>
         <div class="ps-target">Cieľ: &lt;0.1</div>
       </div>
     </div>
 
-    <div class="disclaimer" style="margin-top: 24px;">
-      PageSpeed dáta budú doplnené po kompletnom behu Lighthouse testov pre obidve domény (lamely3d.sk aj lamely3d.de).
+    <h3 style="font-family: var(--font-secondary); font-size: 15px; color: var(--dex-navy); margin: 32px 0 16px;">lamely3d.de (mobile)</h3>
+    <div class="ps-grid">
+      <div class="ps-card ok">
+        <div class="ps-value">69</div>
+        <div class="ps-label">Performance</div>
+        <div class="ps-target">Cieľ: 90+</div>
+      </div>
+      <div class="ps-card ok">
+        <div class="ps-value">3.0 s</div>
+        <div class="ps-label">LCP</div>
+        <div class="ps-target">Cieľ: &lt;2.5 s</div>
+      </div>
+      <div class="ps-card good">
+        <div class="ps-value">60 ms</div>
+        <div class="ps-label">TBT</div>
+        <div class="ps-target">Cieľ: &lt;200 ms</div>
+      </div>
+      <div class="ps-card good">
+        <div class="ps-value">0.8 s</div>
+        <div class="ps-label">FCP</div>
+        <div class="ps-target">Cieľ: &lt;1.8 s</div>
+      </div>
+      <div class="ps-card good">
+        <div class="ps-value">1.6 s</div>
+        <div class="ps-label">Speed Index</div>
+        <div class="ps-target">Cieľ: &lt;3.4 s</div>
+      </div>
+      <div class="ps-card good">
+        <div class="ps-value">0.026</div>
+        <div class="ps-label">CLS</div>
+        <div class="ps-target">Cieľ: &lt;0.1</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <div class="finding">
+        <div class="bar high"></div>
+        <div class="content">
+          <h4>lamely3d.sk — Performance 32/100, LCP 10.7 s <span class="badge badge-critical">Kritické</span></h4>
+          <p>SK web je extrémne pomalý. LCP 10.7 s je 4× nad limitom (2.5 s). TBT 1 790 ms znamená takmer 2 sekundy nereaktivity. Toto priamo zabíja konverzie — návštevník odíde skôr ako sa stránka načíta.</p>
+        </div>
+      </div>
+      <div class="finding">
+        <div class="bar med"></div>
+        <div class="content">
+          <h4>lamely3d.de — Server Error počas testu <span class="badge badge-warning">Dôležité</span></h4>
+          <p>DE verzia má lepší Performance (69), ale Lighthouse zachytil "Server Error" — web občas padá. Pre DE trh kde má klient 0 objednávok je nestabilný server kritický blocker.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
